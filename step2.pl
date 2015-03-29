@@ -6,7 +6,7 @@ a_droite_de(A, B, [A, B|_]).
 a_droite_de(A, B, [_|Y]) :- a_droite_de(A, B, Y).
 
 a_cote_de(A, B, [A, B|_]).
-a_cote_de(A, B,[B, A|_]).
+a_cote_de(A, B, [B, A|_]).
 a_cote_de(A, B, [_|Y]) :- a_cote_de(A, B, Y).
 
 solve(Maisons) :-
@@ -20,7 +20,7 @@ solve(Maisons) :-
 	appartient_a(m(_, jaune, _, _, dunhill), Maisons), % Le propriétaire de la maison jaune fume des Dunhill.
 	Maisons = [_, _, m(_, _, _, lait, _), _, _], % La personne qui vit dans la maison du centre boit du lait.
 	Maisons = [m(norvegien, _, _, _, _)|_], % Le Norvégien habite dans la première maison.
-	a_cote_de(m(_, _, _,_, blend),m(_, _, chats, _, _), Maisons), % L’homme qui fume des Blend vit à côté de celui qui a des chats.
+	a_cote_de(m(_, _, _,_, blend), m(_, _, chats, _, _), Maisons), % L’homme qui fume des Blend vit à côté de celui qui a des chats.
 	a_cote_de(m(_, _, cheval, _, _), m(_, _, _, _, dunhill), Maisons), % L’homme qui a un cheval est le voisin de celui qui fume des Dunhill.
 	appartient_a(m(_, _, _, biere, blue_master), Maisons), % Le propriétaire qui fume des Blue Master boit de la bière.
 	appartient_a(m(allemand, _, _, _, prince), Maisons), % L’Allemand fume des prince.
