@@ -5,7 +5,7 @@ mari_de(H, F) :- member((H, F), [(marc, anne), (luc, betty), (jules, lisa), (leo
 femme_de(F, H) :- mari_de(H, F).
 
 beaupere_de(X, Y) :- member((X, Y), [(luc, eve), (luc, jules), (marc, loic), (leon, paul)]).
-bellemere_de(X, Y) :- member((X, Y), [(anne, sylvie), (anne, eve), (betty, jules), (betty, leon), (sylvie, paul)]).
+bellemere_de(X, Y) :- member((X, Y), [(anne, sylvie), (anne, lisa), (betty, jules), (betty, leon), (sylvie, paul)]).
 
 enfant_de(E, P) :- member([E|P], [[jean|marc], [jules|marc], [leon|marc]]).
 enfant_de(E, P) :- member([E|P], [[lisa|luc], [loic|luc], [gerard|luc]]).
